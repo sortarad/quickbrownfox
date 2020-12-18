@@ -1,0 +1,23 @@
+{
+    "name": "sortarad/quick-brown-fox",
+    "description": "Fonts are fun, let's make them easier to showcase.",
+    "keywords": ["statamic"],
+    "homepage": "https://github.com/sortarad/needledrop",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sortarad\\QuickBrownFox\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Quick Brown Fox",
+            "description": "Quick Brown Fox addon"
+        },
+        "laravel": {
+            "providers": [
+                "Sortarad\\QuickBrownFox\\ServiceProvider"
+            ]
+        }
+    }
+}
