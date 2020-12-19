@@ -29,7 +29,7 @@ class QuickBrownFoxTags extends Tags
 
         $data = [
             'fonts' => $fonts->all(),
-            'textStyle' => $fonts->first()->getStyles(),
+            'data' => $fonts->first()->getData(),
             'text' => $this->content ?: 'The quick brown fox jumps over the lazy dog.',
         ];
 

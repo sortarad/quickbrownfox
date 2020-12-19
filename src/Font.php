@@ -83,14 +83,17 @@ class Font
 		}
 	}
 
-	public function getStyles() {
-		$styles = sprintf(
-			'font-family: "%s"; font-style: %s; font-weight: %d;',
-			$this->family,
-			$this->style,
-			$this->weight
-		);
-
-		return $styles;
+	/**
+	 * Get inline styles for the font.
+	 *
+	 * @return string
+	 */
+	public function getData() {
+		return [
+			'family' => $this->family,
+			'size' => 20,
+			'style' => $this->style,
+			'weight' => $this->weight,
+		];
 	}
 }
