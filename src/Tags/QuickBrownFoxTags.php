@@ -3,6 +3,7 @@
 namespace Sortarad\QuickBrownFox\Tags;
 
 use Statamic\Tags\Tags;
+use Sortarad\QuickBrownFox\Font;
 
 class QuickBrownFoxTags extends Tags
 {
@@ -15,7 +16,17 @@ class QuickBrownFoxTags extends Tags
      */
     public function index()
     {
-        //
+        $items = $this->params->get('from');
+        $fonts = $items->map(function($item) {
+            return new Font($item->url());
+        });
+
+        $data = [
+            'fonts' => $fonts->all(),
+        ];
+
+        // dd( $fonts );
+        return view('qbf::index', $data);
     }
 
     /**
