@@ -30,6 +30,7 @@ class QuickBrownFoxTags extends Tags
         $data = [
             'fonts' => $fonts->all(),
             'textStyle' => $fonts->first()->getStyles(),
+            'text' => $this->content ?: 'The quick brown fox jumps over the lazy dog.',
         ];
 
         return view('qbf::index', $data);
