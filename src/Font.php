@@ -8,7 +8,7 @@ class Font
 {
 	public $path;
 
-	public $filename;
+	public $family;
 
 	public $label;
 
@@ -19,10 +19,10 @@ class Font
 	public function __construct(string $path)
 	{
 		$this->path = $path;
-		$this->filename = Str::lower(pathinfo($path, PATHINFO_FILENAME));
+		$this->family = Str::lower(pathinfo($path, PATHINFO_FILENAME));
 
-		$this->setWeight($this->filename);
-		$this->setStyle($this->filename);
+		$this->setWeight($this->family);
+		$this->setStyle($this->family);
 	}
 	
 	/**
@@ -83,14 +83,14 @@ class Font
 		}
 	}
 
-	public function getFontFace() {
-		$fontFace = [
-			sprintf('font-family: "%s";', $this->filename),
-			sprintf('font-style: %s;', $this->style),
-			sprintf('font-weight: %d;', $this->weight),
-			sprintf('src: url(%s);', $this->path),
-		];
+	public function getStyles() {
+		$styles = sprintf(
+			'font-family: "%s"; font-style: %s; font-weight: %d;',
+			$this->family,
+			$this->style,
+			$this->weight
+		);
 
-		return sprintf('@font-face { %s }', implode(' ', $fontFace));
+		return $styles;
 	}
 }

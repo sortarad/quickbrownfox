@@ -12,30 +12,26 @@ class QuickBrownFoxTags extends Tags
     /**
      * The {{ quick_brown_fox }} tag.
      *
-     * @return string|array
+     * @return null|string
      */
     public function index()
     {
+        if (! $this->params->has('from')) {
+            return null;
+        }
+
         $items = $this->params->get('from');
-        $fonts = $items->map(function($item) {
+        $fonts = $items->map(function ($item) {
             return new Font($item->url());
+        })->sortBy(function ($font) {
+            return $font->weight;
         });
 
         $data = [
             'fonts' => $fonts->all(),
+            'textStyle' => $fonts->first()->getStyles(),
         ];
 
-        // dd( $fonts );
         return view('qbf::index', $data);
-    }
-
-    /**
-     * The {{ quick_brown_fox:example }} tag.
-     *
-     * @return string|array
-     */
-    public function example()
-    {
-        //
     }
 }
