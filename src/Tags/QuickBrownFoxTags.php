@@ -35,4 +35,14 @@ class QuickBrownFoxTags extends Tags
 
         return view('qbf::index', $data);
     }
+
+    /**
+     * The {{ quick_brown_fox:assets }} tag.
+     *
+     * @return string|array
+     */
+    public function assets()
+    {
+        return view('qbf::assets');
+    }
 }
