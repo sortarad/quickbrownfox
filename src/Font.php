@@ -91,7 +91,6 @@ class Font
 	public function getData() {
 		return [
 			'family' => $this->family,
-			'size' => 20,
 			'style' => $this->style,
 			'weight' => $this->weight,
 		];
