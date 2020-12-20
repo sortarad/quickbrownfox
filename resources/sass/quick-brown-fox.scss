@@ -5,6 +5,7 @@ $grey-500: #6B7280;
 @mixin range-thumb() {
 	height: 18px;
 	width: 18px;
+	border: none;
 	border-radius: 50%;
 	cursor: pointer;
 	background: $grey-500;
@@ -61,7 +62,15 @@ $grey-500: #6B7280;
 			margin-top: -7px;	
 		}
 
+		&::-moz-range-thumb {
+			@include range-thumb();
+		}
+
 		&::-webkit-slider-runnable-track {
+			@include range-track();
+		}
+
+		&::-moz-range-track {
 			@include range-track();
 		}
 	}
