@@ -21,6 +21,8 @@ class QuickBrownFoxTags extends Tags
         }
 
         $items = $this->params->get('from');
+        $size = $this->params->get('size', 20);
+
         $fonts = $items->map(function ($item) {
             return new Font($item->url());
         })->sortBy(function ($font) {
@@ -29,7 +31,7 @@ class QuickBrownFoxTags extends Tags
 
         $data = [
             'fonts' => $fonts->all(),
-            'data' => array_merge( $fonts->first()->getData(), [ 'align' => 'left', 'size' => 20 ] ),
+            'data' => array_merge($fonts->first()->getData(), ['align' => 'left', 'size' => $size]),
             'text' => $this->content ?: 'The quick brown fox jumps over the lazy dog.',
         ];
 
