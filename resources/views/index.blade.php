@@ -1,6 +1,6 @@
-<div class="quick-brown-fox" x-data="quickBrownFox()">
-	@include('qbf::partials.inline-styles')
+@include('qbf::partials.inline-styles')
 
+<div class="quick-brown-fox" x-data="quickBrownFox()">
 	<div class="quick-brown-fox__controls flex mb-4">
 		<div class="quick-brown-fox__controls-range">
 			<input type="range" x-model="size" min="8" max="112">
