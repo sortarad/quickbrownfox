@@ -7,8 +7,7 @@ composer require sortarad/quick-brown-fox
 
 ## How to use?
 1. First you need to include Alpine.js (if you haven't done so already).
-2. Then create an asset container with the handle of **fonts**.
-
+2. Then create an asset container with the handle of **fonts**. In that container upload your font.
 3. Finally, place the quick brown fox tag into a view.   
 `{{ quick_brown_fox :from="fonts" size="30" }}` .
 
