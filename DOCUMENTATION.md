@@ -6,8 +6,8 @@ composer require sortarad/quick-brown-fox
 ```
 
 ## How to use?
-1. First you need to include Alpine if you haven't done so already. You can do this by adding the link to the latest version to the head of your site:
-`<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.0/dist/alpine.min.js`" defer></script>`
+1. First you need to include Alpine if you haven't done so already. You can do this by adding the link to the latest version to the head of your site.
+`<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.0/dist/alpine.min.js" defer></script>`
 
 2. Then create an asset container with the identifer of fonts.
 
@@ -22,7 +22,7 @@ Example: `size="30"`
 - **Text:** What text is used in the type tester.   
 It defaults to **The quick brown fox jumps over the lazy dog** but you can modify default text by wrapping new text into a tag.
 
-**Example: **
+**Example:**
 ```
 {{ quick_brown_fox :from="fonts" size="30" }}
 	Feel the Rhythm! Feel the Rhyme! Get on up, it's bobsled time! Cool Runnings!
