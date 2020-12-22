@@ -7,7 +7,7 @@ composer require sortarad/quick-brown-fox
 
 ## How to use?
 1. First you need to include Alpine if you haven't done so already. You can do this by adding the link to the latest version to the HEAD of your site:
-```html
+```
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.0/dist/alpine.min.js`" defer></script>
 ```
 
