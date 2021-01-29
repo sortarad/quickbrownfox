@@ -23,6 +23,10 @@ class QuickBrownFoxTags extends Tags
         $items = $this->params->get('from');
         $size = $this->params->get('size', 20);
 
+        if ($items->isEmpty()) {
+            return null;
+        }
+
         $fonts = $items->map(function ($item) {
             return new Font($item->url());
         })->sortBy(function ($font) {
